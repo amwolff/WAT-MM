@@ -2,6 +2,7 @@
 
 \usepackage{polski}
 \usepackage[utf8]{inputenc}
+\usepackage{chemformula}
 \title{
 	\Large{Modelowanie Matematyczne (zadanie)}
 	\\
@@ -16,4 +17,18 @@
 
 \maketitle
 
+\section{Treść problemu}
+Warmińsko-mazurska kopalnia paliw kopalnianych \textit{Albrecht} wydobywa 3 rodzaje węgla.
+Węgiel typu I jest najbardziej opłacalny do wydobycia, ale najmniej ekologiczny.
+Węgiel typu II jest mniej opłacalny do wydobycia, ale bardziej ekologiczny.
+Węgiel typu III jest najmniej opłacalny do wydobycia, ale najbardziej ekologiczny.
+Dyrektywy Unii Europejskiej mówią o tym, że kopalnia powinna wydobywać co najwyżej 25Mt węgla typu I, conajmniej 50Mt węgla typu II i conajmniej 25Mt węgla typu III miesięcznie.
+Wydajność kopalni \textit{Albrecht} to średnio 133Mt miesięcznie.
+Za każdy 1\% nadprodukcji węgla typu II kopalnia otrzyma \textit{dopłatę klimatyczną} w wysokości 5\% przychodu i 10\% przychodu w przypadku węgla typu III.
+Jednak, w wyniku nieprzewidzianych okoliczności, może zdarzyć się tak, że podczas kopania węgla wykopany zostanie radioaktywny metal, izotop polonu \ch{^{210}Po}.
+W takim wypadku, Polska Agencja Atomistyki zamyka kopalnię na miesiąc, a wykopany dotychczas węgiel zostaje przewieziony na wysypisko materiałów promieniotwórczych.
+Wymienione wyżej zdarzenie to proces stochastyczny i nie da się go przewidzieć, ale jest możliwość zasymulowania go używając generatora liczb pseudolosowych (wartości boolowskich).
+Poza tym, koszty związane z sezonowaniem (składowaniem i przechowywaniem) nadwyżek produkcji ponosi kopalnia.
+Jakie powinny być proporcje wydobycia każdego z typów węgla w miesiącu, biorąc pod uwagę zmienny popyt na węgiel, tak aby zysk zakładu był jak największy?
+Czy jest to problem rozwiązywalny?
 \end{document}
