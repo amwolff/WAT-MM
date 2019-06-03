@@ -42,7 +42,7 @@ $c_2$ -- cena sprzedaży węgla typu II (1 tony) \\
 $c_3$ -- cena sprzedaży węgla typu III (1 tony) \\
 $u_1$ -- maksymalny udział węgla typu I w ogóle wydobycia \\
 $u_2$ -- minimalny udział węgla typu II w ogóle wydobycia \\
-$u_2$ -- minimalny udział węgla typu III w ogóle wydobycia \\
+$u_3$ -- minimalny udział węgla typu III w ogóle wydobycia \\
 $k_1$ -- dopłata klimatyczna za nadprodukcję 1\% węgla typu II \\
 $k_2$ -- dopłata klimatyczna za nadprodukcję 1\% węgla typu III \\
 $p_1$ -- popyt na węgiel typu I \\
@@ -50,14 +50,21 @@ $p_2$ -- popyt na węgiel typu II \\
 $p_3$ -- popyt na węgiel typu III \\
 $s$ -- koszt sezonowania węgla \\
 $w$ -- wydajność kopalni \\
+$b$ -- wynik generatora liczb pseudolosowych (PRNG)* \\
+
+\subsection{*Generator liczb pseudolosowych}
+PRNG dla zadania zdefiniowany jest w następujący sposób:
+$$x_{n + 1} = (x_n)^2 \ mod \ M$$
+gdzie $x_n$ to kolejne stany generatora, a $M$ to iloczyn dwóch dużych liczb pierwszych $p$ i $q$ dających w dzieleniu przez 4 resztę 3 (dzięki czemu każda reszta kwadratowa modulo $p$ ma jeden pierwiastek kwadratowy,
+który także jest resztą kwadratową), i mających możliwie mały $\operatorname{NWD}(\phi(p - 1), \phi(q - 1))$, a $\phi$ jest funkcją Eulera (co zapewnia długi cykl). Wynikiem generatora jest ostatni bit $x_n$.
 
 \section{Lista zmiennych decyzyjnych}
 $l_1$ -- liczba wyprodukowanych ton węgla typu I \\
 $l_2$ -- liczba wyprodukowanych ton węgla typu II \\
-$l_3$ -- liczba wyprodukowanych ton węgla typu III \\
+$l_3$ -- liczba wyprodukowanych ton węgla typu III
 
 \section{Lista wskaźników}
-$z$ -- zysk kopalni \\
+$z$ -- zysk kopalni
 
 \section{Model optymalizacyjny}
 $$a = \left< x_1, x_2, x_3, c_1, c_2, c_3, u_1, u_2, u_3, k_1, k_2, p_1, p_2, p_3, s, w \right>$$
@@ -71,6 +78,5 @@ $$\Omega(a) = \{ \left< l_1, l_2, l_3 \right> \in \mathbb{N}^3: l_1 + l_2 + l_2 
 $$k = \left< z \right>$$
 
 $$\mathbb{K}(a, x) = \{ \}$$
-
 
 \end{document}
