@@ -23,12 +23,12 @@ Warmińsko-mazurska kopalnia paliw kopalnianych \textit{Albrecht} wydobywa 3 rod
 Węgiel typu I jest najbardziej opłacalny do wydobycia, ale najmniej ekologiczny.
 Węgiel typu II jest mniej opłacalny do wydobycia, ale bardziej ekologiczny.
 Węgiel typu III jest najmniej opłacalny do wydobycia, ale najbardziej ekologiczny.
-Dyrektywy Unii Europejskiej mówią o tym, że w pełni działająca kopalnia powinna wydobywać co najwyżej 25Mt węgla typu I, conajmniej 50Mt węgla typu II i conajmniej 25Mt węgla typu III miesięcznie.
+Dyrektywy Unii Europejskiej mówią o tym, że w pełni działająca kopalnia powinna wydobywać co najwyżej 25Mt węgla typu I, co najmniej 50Mt węgla typu II i co najmniej 25Mt węgla typu III miesięcznie.
 Wydajność kopalni \textit{Albrecht} to średnio 133Mt miesięcznie.
 Za każdy 1\% nadprodukcji węgla typu II kopalnia otrzyma \textit{dopłatę klimatyczną} w wysokości 5\% przychodu i 10\% przychodu w przypadku węgla typu III.
 Jednak, w wyniku nieprzewidzianych okoliczności, może zdarzyć się tak, że podczas kopania węgla wykopany zostanie naturalnie występujący radioaktywny metal, izotop polonu \ch{^{210}Po}.
 W takim wypadku, Polska Agencja Atomistyki zamyka kopalnię na miesiąc, a wykopany dotychczas węgiel zostaje przewieziony na wysypisko materiałów promieniotwórczych.
-Wymienione wyżej zdarzenie to proces stochastyczny i nie da się go przewidzieć, ale jest możliwość zasymulowania go używając generatora liczb pseudolosowych (wartości boolowskich).
+Wymienione powyżej zdarzenie to proces stochastyczny i nie da się go przewidzieć, ale jest możliwość zasymulowania go używając generatora liczb pseudolosowych (wartości boolowskich).
 Poza tym, koszty związane z sezonowaniem (składowaniem i przechowywaniem) nadwyżek produkcji ponosi kopalnia.
 Jakie powinny być proporcje wydobycia każdego z typów węgla w miesiącu, biorąc pod uwagę zmienny popyt na węgiel, tak aby zysk zakładu był jak największy?
 Czy da się znaleźć rozwiązanie optymalne bez wprowadzania pojęcia ryzyka?
@@ -91,7 +91,7 @@ $z$ -- zysk kopalni
 	\begin{aligned}
 		\operatorname{K}(a, x) ={} & \{ z \in \mathbb{Z} : z = b \cdot \sum_{i = 1}^3 c_i \cdot \min{(p_i, l_i)} \ -                \\
 		                           & - \sum_{i = 1}^3 x_i \cdot l_i - s \cdot \sum_{i = 1}^3 \max{(0, l_i - p_i)} \ +               \\
-		                           & + k_2 \cdot (\frac{100 \cdot l_2}{l_2} - 100) + k_3 \cdot (\frac{100 \cdot l_3}{l_3} - 100) \} 
+		                           & + k_2 \cdot (\frac{100 \cdot l_2}{u_2} - 100) + k_3 \cdot (\frac{100 \cdot l_3}{u_3} - 100) \} 
 	\end{aligned}
 \end{equation}
 
